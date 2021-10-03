@@ -1,0 +1,31 @@
+/*
+ * EXT_INT_CONFIG.h
+ *
+ * Created: 9/26/2021 7:58:21 PM
+ *  Author: abdel
+ */ 
+
+
+#ifndef EXT_INT_CONFIG_H_
+#define EXT_INT_CONFIG_H_
+
+/*Macros and libraries needed*/
+#include "CPU_CONFIG.h"
+
+// ENABLE INTERRUPT
+#define GLOBAL_INTERRUPT_EN      1
+#define GLOBAL_INTERRUPT_DS      0
+// INTERRUPT TIGGER
+#define EXT_INT_TRG_LOW          0
+#define EXT_INT_TRG_ANY_LOGICAL  1
+#define EXT_INT_TRG_FALLING_EDGE 2
+#define EXT_INT_TRG_RISING_EDGE  3
+// INTERRUPT STATUS
+#define GLOBAL_INTERRUPT_STATE    GLOBAL_INTERRUPT_EN
+#define EXT_INT0_TRIGGER          EXT_INT_TRG_FALLING_EDGE
+#define EXT_INT1_TRIGGER          EXT_INT_TRG_RISING_EDGE
+#define EXT_INT2_TRIGGER          EXT_INT_TRG_LOW
+
+
+
+#endif /* EXT_INT_CONFIG_H_ */

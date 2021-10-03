@@ -1,0 +1,274 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+SHELL := cmd.exe
+RM := rm -rf
+
+USER_OBJS :=
+
+LIBS := 
+PROJ := 
+
+O_SRCS := 
+C_SRCS := 
+S_SRCS := 
+S_UPPER_SRCS := 
+OBJ_SRCS := 
+ASM_SRCS := 
+PREPROCESSING_SRCS := 
+OBJS := 
+OBJS_AS_ARGS := 
+C_DEPS := 
+C_DEPS_AS_ARGS := 
+EXECUTABLES := 
+OUTPUT_FILE_PATH :=
+OUTPUT_FILE_PATH_AS_ARGS :=
+AVR_APP_PATH :=$$$AVR_APP_PATH$$$
+QUOTE := "
+ADDITIONAL_DEPENDENCIES:=
+OUTPUT_FILE_DEP:=
+LIB_DEP:=
+LINKER_SCRIPT_DEP:=
+
+# Every subdirectory with source files must be described here
+SUBDIRS :=  \
+../APP \
+../APP/Room_2 \
+../APP/Room_1 \
+../APP/Smart_Home_RC \
+../ECU \
+../ECU/EXT_INT \
+../ECU/IN_OUT_MODULE \
+../ECU/LCD \
+../ECU/GAS\ SENSOR \
+../MCAL \
+../MCAL/DIO \
+../MCAL/ADC \
+../MCAL/USART \
+../MCAL/SPI \
+../SERVICES
+
+
+# Add inputs and outputs from these tool invocations to the build variables 
+C_SRCS +=  \
+../APP/Room_1/Room_1.c \
+../APP/Room_2/Room_2.c \
+../APP/Smart_Home_RC/Smart_Home.c \
+../ECU/EXT_INT/EXT_INT.c \
+../ECU/GAS\ SENSOR/GAS_SENSOR.c \
+../ECU/IN_OUT_MODULE/IN_OUT_MODULE.c \
+../ECU/LCD/LCD.c \
+../main.c \
+../MCAL/ADC/ADC.c \
+../MCAL/DIO/DIO.c \
+../MCAL/SPI/SPI.c \
+../MCAL/USART/USART.c
+
+
+PREPROCESSING_SRCS += 
+
+
+ASM_SRCS += 
+
+
+OBJS +=  \
+APP/Room_1/Room_1.o \
+APP/Room_2/Room_2.o \
+APP/Smart_Home_RC/Smart_Home.o \
+ECU/EXT_INT/EXT_INT.o \
+ECU/GAS\ SENSOR/GAS_SENSOR.o \
+ECU/IN_OUT_MODULE/IN_OUT_MODULE.o \
+ECU/LCD/LCD.o \
+main.o \
+MCAL/ADC/ADC.o \
+MCAL/DIO/DIO.o \
+MCAL/SPI/SPI.o \
+MCAL/USART/USART.o
+
+OBJS_AS_ARGS +=  \
+APP/Room_1/Room_1.o \
+APP/Room_2/Room_2.o \
+APP/Smart_Home_RC/Smart_Home.o \
+ECU/EXT_INT/EXT_INT.o \
+"ECU/GAS SENSOR/GAS_SENSOR.o" \
+ECU/IN_OUT_MODULE/IN_OUT_MODULE.o \
+ECU/LCD/LCD.o \
+main.o \
+MCAL/ADC/ADC.o \
+MCAL/DIO/DIO.o \
+MCAL/SPI/SPI.o \
+MCAL/USART/USART.o
+
+C_DEPS +=  \
+APP/Room_1/Room_1.d \
+APP/Room_2/Room_2.d \
+APP/Smart_Home_RC/Smart_Home.d \
+ECU/EXT_INT/EXT_INT.d \
+ECU/GAS\ SENSOR/GAS_SENSOR.d \
+ECU/IN_OUT_MODULE/IN_OUT_MODULE.d \
+ECU/LCD/LCD.d \
+main.d \
+MCAL/ADC/ADC.d \
+MCAL/DIO/DIO.d \
+MCAL/SPI/SPI.d \
+MCAL/USART/USART.d
+
+C_DEPS_AS_ARGS +=  \
+APP/Room_1/Room_1.d \
+APP/Room_2/Room_2.d \
+APP/Smart_Home_RC/Smart_Home.d \
+ECU/EXT_INT/EXT_INT.d \
+"ECU/GAS SENSOR/GAS_SENSOR.d" \
+ECU/IN_OUT_MODULE/IN_OUT_MODULE.d \
+ECU/LCD/LCD.d \
+main.d \
+MCAL/ADC/ADC.d \
+MCAL/DIO/DIO.d \
+MCAL/SPI/SPI.d \
+MCAL/USART/USART.d
+
+OUTPUT_FILE_PATH +=Smart_Home.elf
+
+OUTPUT_FILE_PATH_AS_ARGS +=Smart_Home.elf
+
+ADDITIONAL_DEPENDENCIES:=
+
+OUTPUT_FILE_DEP:= ./makedep.mk
+
+LIB_DEP+= 
+
+LINKER_SCRIPT_DEP+= 
+
+
+# AVR32/GNU C Compiler
+APP/Room_1/Room_1.o: ../APP/Room_1/Room_1.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APP/Room_2/Room_2.o: ../APP/Room_2/Room_2.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APP/Smart_Home_RC/Smart_Home.o: ../APP/Smart_Home_RC/Smart_Home.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+ECU/EXT_INT/EXT_INT.o: ../ECU/EXT_INT/EXT_INT.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+ECU/GAS\ SENSOR/GAS_SENSOR.o: ../ECU/GAS\ SENSOR/GAS_SENSOR.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+ECU/IN_OUT_MODULE/IN_OUT_MODULE.o: ../ECU/IN_OUT_MODULE/IN_OUT_MODULE.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+ECU/LCD/LCD.o: ../ECU/LCD/LCD.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./main.o: .././main.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/ADC/ADC.o: ../MCAL/ADC/ADC.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/DIO/DIO.o: ../MCAL/DIO/DIO.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/SPI/SPI.o: ../MCAL/SPI/SPI.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/USART/USART.o: ../MCAL/USART/USART.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\include" -I"../APP" -I"../ECU" -I"../MCAL" -I"../SERVICES" -I"../MCAL/DIO" -I"../MCAL/ADC" -I"../MCAL/SPI" -I"../MCAL/USART" -I"../ECU/EXT_INT" -I"../ECU/IN_OUT_MODULE" -I"../ECU/LCD" -I"../APP/Room_1" -I"../APP/Room_2" -I"../APP/Smart_Home_RC" -I"../ECU/GAS SENSOR"  -Og -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g2 -Wall -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+
+
+
+# AVR32/GNU Preprocessing Assembler
+
+
+
+# AVR32/GNU Assembler
+
+
+
+
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+endif
+
+# Add inputs and outputs from these tool invocations to the build variables 
+
+# All Target
+all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
+
+$(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP) $(LINKER_SCRIPT_DEP)
+	@echo Building target: $@
+	@echo Invoking: AVR/GNU Linker : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Smart_Home.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mmcu=atmega32a -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\gcc\dev\atmega32a"  
+	@echo Finished building target: $@
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Smart_Home.elf" "Smart_Home.hex"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Smart_Home.elf" "Smart_Home.eep" || exit 0
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objdump.exe" -h -S "Smart_Home.elf" > "Smart_Home.lss"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Smart_Home.elf" "Smart_Home.srec"
+	"C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-size.exe" "Smart_Home.elf"
+	
+	
+
+
+
+
+
+# Other Targets
+clean:
+	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
+	-$(RM) $(C_DEPS_AS_ARGS)   
+	rm -rf "Smart_Home.elf" "Smart_Home.a" "Smart_Home.hex" "Smart_Home.lss" "Smart_Home.eep" "Smart_Home.map" "Smart_Home.srec" "Smart_Home.usersignatures"
+	

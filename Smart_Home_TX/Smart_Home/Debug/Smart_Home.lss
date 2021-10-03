@@ -1,0 +1,318 @@
+
+Smart_Home.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000001c2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00000216  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  00000216  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000248  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 000000c0  00000000  00000000  00000284  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009bd  00000000  00000000  00000344  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000810  00000000  00000000  00000d01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000613  00000000  00000000  00001511  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  0000016c  00000000  00000000  00001b24  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    000004a1  00000000  00000000  00001c90  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000022a  00000000  00000000  00002131  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000080  00000000  00000000  0000235b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 40 00 	jmp	0x80	; 0x80 <__vector_13>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 6e 00 	call	0xdc	; 0xdc <main>
+  64:	0c 94 df 00 	jmp	0x1be	; 0x1be <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <Smart_Home_TX_INT>:
+#define   USART_BAUDRATE 9600
+
+
+void Smart_Home_TX_INT(void){
+	 
+	UART_init( USART_BAUDRATE);
+  6c:	60 e8       	ldi	r22, 0x80	; 128
+  6e:	75 e2       	ldi	r23, 0x25	; 37
+  70:	80 e0       	ldi	r24, 0x00	; 0
+  72:	90 e0       	ldi	r25, 0x00	; 0
+  74:	0e 94 86 00 	call	0x10c	; 0x10c <UART_init>
+	SPI_initMasterMode();
+  78:	0e 94 73 00 	call	0xe6	; 0xe6 <SPI_initMasterMode>
+  7c:	08 95       	ret
+
+0000007e <Smart_Home_TX_Start>:
+	
+}
+
+void Smart_Home_TX_Start(void){
+  7e:	08 95       	ret
+
+00000080 <__vector_13>:
+
+}
+
+
+ISR(USART_RXC_vect)
+{
+  80:	1f 92       	push	r1
+  82:	0f 92       	push	r0
+  84:	0f b6       	in	r0, 0x3f	; 63
+  86:	0f 92       	push	r0
+  88:	11 24       	eor	r1, r1
+  8a:	2f 93       	push	r18
+  8c:	3f 93       	push	r19
+  8e:	4f 93       	push	r20
+  90:	5f 93       	push	r21
+  92:	6f 93       	push	r22
+  94:	7f 93       	push	r23
+  96:	8f 93       	push	r24
+  98:	9f 93       	push	r25
+  9a:	af 93       	push	r26
+  9c:	bf 93       	push	r27
+  9e:	ef 93       	push	r30
+  a0:	ff 93       	push	r31
+	
+	SPI_SendByte(UDR);
+  a2:	8c b1       	in	r24, 0x0c	; 12
+  a4:	0e 94 82 00 	call	0x104	; 0x104 <SPI_SendByte>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  a8:	2f ef       	ldi	r18, 0xFF	; 255
+  aa:	89 e6       	ldi	r24, 0x69	; 105
+  ac:	98 e1       	ldi	r25, 0x18	; 24
+  ae:	21 50       	subi	r18, 0x01	; 1
+  b0:	80 40       	sbci	r24, 0x00	; 0
+  b2:	90 40       	sbci	r25, 0x00	; 0
+  b4:	e1 f7       	brne	.-8      	; 0xae <__vector_13+0x2e>
+  b6:	00 c0       	rjmp	.+0      	; 0xb8 <__vector_13+0x38>
+  b8:	00 00       	nop
+	_delay_ms(500);
+	
+  ba:	ff 91       	pop	r31
+  bc:	ef 91       	pop	r30
+  be:	bf 91       	pop	r27
+  c0:	af 91       	pop	r26
+  c2:	9f 91       	pop	r25
+  c4:	8f 91       	pop	r24
+  c6:	7f 91       	pop	r23
+  c8:	6f 91       	pop	r22
+  ca:	5f 91       	pop	r21
+  cc:	4f 91       	pop	r20
+  ce:	3f 91       	pop	r19
+  d0:	2f 91       	pop	r18
+  d2:	0f 90       	pop	r0
+  d4:	0f be       	out	0x3f, r0	; 63
+  d6:	0f 90       	pop	r0
+  d8:	1f 90       	pop	r1
+  da:	18 95       	reti
+
+000000dc <main>:
+
+#include "Smart_Home.h"
+
+int main(void)
+{
+	Smart_Home_TX_INT();	
+  dc:	0e 94 36 00 	call	0x6c	; 0x6c <Smart_Home_TX_INT>
+	while (1)
+	{
+		Smart_Home_TX_Start();
+  e0:	0e 94 3f 00 	call	0x7e	; 0x7e <Smart_Home_TX_Start>
+  e4:	fd cf       	rjmp	.-6      	; 0xe0 <main+0x4>
+
+000000e6 <SPI_initMasterMode>:
+	SPCR = 0; // interrupt , Prescale  
+	
+	SET_BIT(SPCR,SPE);// SPI Enable
+	// Enable SPI interrupt
+	//SET_BIT(SPCR,SPIE);
+	SET_BIT(SREG,7);// enable global interrupt
+  e6:	87 b3       	in	r24, 0x17	; 23
+  e8:	80 61       	ori	r24, 0x10	; 16
+  ea:	87 bb       	out	0x17, r24	; 23
+  ec:	87 b3       	in	r24, 0x17	; 23
+  ee:	80 62       	ori	r24, 0x20	; 32
+  f0:	87 bb       	out	0x17, r24	; 23
+  f2:	87 b3       	in	r24, 0x17	; 23
+  f4:	8f 7b       	andi	r24, 0xBF	; 191
+  f6:	87 bb       	out	0x17, r24	; 23
+  f8:	87 b3       	in	r24, 0x17	; 23
+  fa:	80 68       	ori	r24, 0x80	; 128
+  fc:	87 bb       	out	0x17, r24	; 23
+  fe:	80 e5       	ldi	r24, 0x50	; 80
+ 100:	8d b9       	out	0x0d, r24	; 13
+ 102:	08 95       	ret
+
+00000104 <SPI_SendByte>:
+
+	
+}
+void SPI_SendByte(char data)
+{
+	SPDR = data;
+ 104:	8f b9       	out	0x0f, r24	; 15
+	while( ! (SPSR & (1 << SPIF) ) );
+ 106:	77 9b       	sbis	0x0e, 7	; 14
+ 108:	fe cf       	rjmp	.-4      	; 0x106 <SPI_SendByte+0x2>
+}
+ 10a:	08 95       	ret
+
+0000010c <UART_init>:
+
+#define  BAUD_PRESCALE  (((F_CPU / (USART_BAUDRATE * 16UL))) - 1)
+
+void UART_init(long USART_BAUDRATE)
+{
+	SET_BIT(SREG,7); // TURN ON GLOBALE INTERRUPT 
+ 10c:	2f b7       	in	r18, 0x3f	; 63
+ 10e:	20 68       	ori	r18, 0x80	; 128
+ 110:	2f bf       	out	0x3f, r18	; 63
+	UCSRB |= (1 << RXEN) | (1 << TXEN);	//  Turn on transmission and reception 
+ 112:	2a b1       	in	r18, 0x0a	; 10
+ 114:	28 61       	ori	r18, 0x18	; 24
+ 116:	2a b9       	out	0x0a, r18	; 10
+	UCSRC |= (1 << URSEL) | (1 << UCSZ0) | (1 << UCSZ1); // Use 8-bit char size 
+ 118:	20 b5       	in	r18, 0x20	; 32
+ 11a:	26 68       	ori	r18, 0x86	; 134
+ 11c:	20 bd       	out	0x20, r18	; 32
+	SET_BIT(UCSRA,U2X);
+ 11e:	2b b1       	in	r18, 0x0b	; 11
+ 120:	22 60       	ori	r18, 0x02	; 2
+ 122:	2b b9       	out	0x0b, r18	; 11
+	UBRRL = BAUD_PRESCALE;			//   Load lower 8-bits of the baud rate 
+ 124:	dc 01       	movw	r26, r24
+ 126:	cb 01       	movw	r24, r22
+ 128:	88 0f       	add	r24, r24
+ 12a:	99 1f       	adc	r25, r25
+ 12c:	aa 1f       	adc	r26, r26
+ 12e:	bb 1f       	adc	r27, r27
+ 130:	88 0f       	add	r24, r24
+ 132:	99 1f       	adc	r25, r25
+ 134:	aa 1f       	adc	r26, r26
+ 136:	bb 1f       	adc	r27, r27
+ 138:	9c 01       	movw	r18, r24
+ 13a:	ad 01       	movw	r20, r26
+ 13c:	22 0f       	add	r18, r18
+ 13e:	33 1f       	adc	r19, r19
+ 140:	44 1f       	adc	r20, r20
+ 142:	55 1f       	adc	r21, r21
+ 144:	22 0f       	add	r18, r18
+ 146:	33 1f       	adc	r19, r19
+ 148:	44 1f       	adc	r20, r20
+ 14a:	55 1f       	adc	r21, r21
+ 14c:	60 e0       	ldi	r22, 0x00	; 0
+ 14e:	74 e2       	ldi	r23, 0x24	; 36
+ 150:	84 ef       	ldi	r24, 0xF4	; 244
+ 152:	90 e0       	ldi	r25, 0x00	; 0
+ 154:	0e 94 bd 00 	call	0x17a	; 0x17a <__udivmodsi4>
+ 158:	8f ef       	ldi	r24, 0xFF	; 255
+ 15a:	82 0f       	add	r24, r18
+ 15c:	89 b9       	out	0x09, r24	; 9
+	UBRRH = (BAUD_PRESCALE >> 8);		//   Load upper 8-bits
+ 15e:	da 01       	movw	r26, r20
+ 160:	c9 01       	movw	r24, r18
+ 162:	01 97       	sbiw	r24, 0x01	; 1
+ 164:	a1 09       	sbc	r26, r1
+ 166:	b1 09       	sbc	r27, r1
+ 168:	89 2f       	mov	r24, r25
+ 16a:	9a 2f       	mov	r25, r26
+ 16c:	ab 2f       	mov	r26, r27
+ 16e:	bb 27       	eor	r27, r27
+ 170:	80 bd       	out	0x20, r24	; 32
+	SET_BIT(UCSRB,RXCIE); // TURN ON USART INTERRUPT
+ 172:	8a b1       	in	r24, 0x0a	; 10
+ 174:	80 68       	ori	r24, 0x80	; 128
+ 176:	8a b9       	out	0x0a, r24	; 10
+ 178:	08 95       	ret
+
+0000017a <__udivmodsi4>:
+ 17a:	a1 e2       	ldi	r26, 0x21	; 33
+ 17c:	1a 2e       	mov	r1, r26
+ 17e:	aa 1b       	sub	r26, r26
+ 180:	bb 1b       	sub	r27, r27
+ 182:	fd 01       	movw	r30, r26
+ 184:	0d c0       	rjmp	.+26     	; 0x1a0 <__udivmodsi4_ep>
+
+00000186 <__udivmodsi4_loop>:
+ 186:	aa 1f       	adc	r26, r26
+ 188:	bb 1f       	adc	r27, r27
+ 18a:	ee 1f       	adc	r30, r30
+ 18c:	ff 1f       	adc	r31, r31
+ 18e:	a2 17       	cp	r26, r18
+ 190:	b3 07       	cpc	r27, r19
+ 192:	e4 07       	cpc	r30, r20
+ 194:	f5 07       	cpc	r31, r21
+ 196:	20 f0       	brcs	.+8      	; 0x1a0 <__udivmodsi4_ep>
+ 198:	a2 1b       	sub	r26, r18
+ 19a:	b3 0b       	sbc	r27, r19
+ 19c:	e4 0b       	sbc	r30, r20
+ 19e:	f5 0b       	sbc	r31, r21
+
+000001a0 <__udivmodsi4_ep>:
+ 1a0:	66 1f       	adc	r22, r22
+ 1a2:	77 1f       	adc	r23, r23
+ 1a4:	88 1f       	adc	r24, r24
+ 1a6:	99 1f       	adc	r25, r25
+ 1a8:	1a 94       	dec	r1
+ 1aa:	69 f7       	brne	.-38     	; 0x186 <__udivmodsi4_loop>
+ 1ac:	60 95       	com	r22
+ 1ae:	70 95       	com	r23
+ 1b0:	80 95       	com	r24
+ 1b2:	90 95       	com	r25
+ 1b4:	9b 01       	movw	r18, r22
+ 1b6:	ac 01       	movw	r20, r24
+ 1b8:	bd 01       	movw	r22, r26
+ 1ba:	cf 01       	movw	r24, r30
+ 1bc:	08 95       	ret
+
+000001be <_exit>:
+ 1be:	f8 94       	cli
+
+000001c0 <__stop_program>:
+ 1c0:	ff cf       	rjmp	.-2      	; 0x1c0 <__stop_program>
